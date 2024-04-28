@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mini7.MainPage">
+
+    <StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Add" Clicked="OnAdd" />
+            <Button Text="Update" Clicked="OnUpdate" HorizontalOptions="CenterAndExpand" />
+            <Button Text="Delete" Clicked="OnDelete" />
+        </StackLayout>
+        <Frame HorizontalOptions="Center">
+            <ScrollView>
+                <ListView x:Name="postsListView" HorizontalOptions="CenterAndExpand">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding Title}" Detail="{Binding Body}" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+        </Frame>
+    </StackLayout>
+
+</ContentPage>
